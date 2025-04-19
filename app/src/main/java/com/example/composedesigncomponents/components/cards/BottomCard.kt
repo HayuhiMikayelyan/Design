@@ -29,7 +29,7 @@ fun BottomCard(
             .fillMaxSize()
             .clip(RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp))
             .background(Neutral0)
-            .padding(horizontal = 16.dp, vertical = 24.dp)
+            .padding(start = 16.dp, end = 16.dp, top = 24.dp)
     ) {
         Text(
             text = title,
