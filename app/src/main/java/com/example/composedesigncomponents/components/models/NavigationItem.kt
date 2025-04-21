@@ -1,4 +1,4 @@
-package com.example.composedesigncomponents.components.navigation
+package com.example.composedesigncomponents.components.models
 
 import androidx.annotation.DrawableRes
 

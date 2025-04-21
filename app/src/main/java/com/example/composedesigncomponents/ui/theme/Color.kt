@@ -48,4 +48,7 @@ val Purple800 = Color(0xFF390066)
 val Primary500 = Color(0xFFFFD400)
 val Primary600 = Color(0xFFEBD71E)
 
+val ButtonTertiaryDisabled = Color(0xFFF1FAFE)
+val TextOnLight = Color(0xFF000000)
+
 val Secondary500 = Color(0xFF888CBF)

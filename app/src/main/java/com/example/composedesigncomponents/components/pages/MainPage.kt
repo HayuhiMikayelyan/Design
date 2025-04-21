@@ -8,19 +8,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -37,10 +29,8 @@ import com.example.composedesigncomponents.ui.theme.BrandPrimary800
 import com.example.composedesigncomponents.ui.theme.BrandSecondary800
 import com.example.composedesigncomponents.ui.theme.BrandSecondaryBlue100
 import com.example.composedesigncomponents.ui.theme.BrandSecondaryBlue800
-import com.example.composedesigncomponents.ui.theme.Gray
 import com.example.composedesigncomponents.ui.theme.Neutral0
 import com.example.composedesigncomponents.ui.theme.Neutral800
-import com.example.composedesigncomponents.ui.theme.Primary500
 
 @Composable
 fun MainPage() {
@@ -134,41 +124,12 @@ fun MainPage() {
             }
         }
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.BottomCenter)
-                .height(170.dp)
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(Color.Transparent, Gray.copy(alpha = 0.9f)),
-                        startY = 0f,
-                        endY = Float.POSITIVE_INFINITY
-                    )
-                )
-        )
-
-        Box(
+        BottomNavigationBar(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(start = 16.dp, end = 16.dp, bottom = 64.dp)
-        ) {
-            BottomNavigationBar()
-            FloatingActionButton(
-                onClick = {},
-                containerColor = Primary500,
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .size(56.dp)
-                    .offset(y = (-34).dp)
-                    .clip(CircleShape)
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.add),
-                    contentDescription = "Add"
-                )
-            }
-        }
+        )
+
     }
 }
 
