@@ -12,6 +12,7 @@ val Pink40 = Color(0xFF7D5260)
 
 val Gray = Color(0xFF999999)
 
+val BrandSecondary25 = Color(0xFFF9F8FB)
 val BrandSecondary50 = Color(0xFFEFEEF6)
 val BrandSecondary200 = Color(0xFFC0BCDC)
 val BrandSecondary600 = Color(0xFF4E4686)
@@ -52,3 +53,15 @@ val ButtonTertiaryDisabled = Color(0xFFF1FAFE)
 val TextOnLight = Color(0xFF000000)
 
 val Secondary500 = Color(0xFF888CBF)
+val TextIncome = Color(0xFF0FA96C)
+val TextExpense = Color(0xFF9F3BF7)
+
+val ButtonPlain = Color(0xFFFFFFFF)
+val IconRegular = Color(0xFF3B3842)
+val TextBody = Color(0xFF595661)
+val BackgroundContainer2 = Color(0xFFF4F4F6)
+val BackgroundMain2 = Color(0xFFFCFBFD)
+val TextSubtitle = Color(0xFF3B3842)
+val TextPlaceholder = Color(0xFFA19FA7)
+val IconPlaceholder = Color(0xFFA19FA7)
+val StrokeStrong = Color(0xFFD5D4D9)

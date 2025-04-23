@@ -12,7 +12,7 @@ import com.example.composedesigncomponents.R
 @Composable
 fun MainTopBackground() {
     Image(
-        painter = painterResource(id = R.drawable.main_background_top),
+        painter = painterResource(id = R.drawable.main_background),
         contentDescription = null,
         modifier = Modifier.fillMaxWidth(),
         contentScale = ContentScale.Crop

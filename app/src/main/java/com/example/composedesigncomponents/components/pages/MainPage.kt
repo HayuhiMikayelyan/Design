@@ -26,6 +26,8 @@ import com.example.composedesigncomponents.components.icons.RoundIcon
 import com.example.composedesigncomponents.components.navigation.BottomNavigationBar
 import com.example.composedesigncomponents.ui.theme.BrandPrimary100
 import com.example.composedesigncomponents.ui.theme.BrandPrimary800
+import com.example.composedesigncomponents.ui.theme.BrandSecondary25
+import com.example.composedesigncomponents.ui.theme.BrandSecondary700
 import com.example.composedesigncomponents.ui.theme.BrandSecondary800
 import com.example.composedesigncomponents.ui.theme.BrandSecondaryBlue100
 import com.example.composedesigncomponents.ui.theme.BrandSecondaryBlue800
@@ -57,8 +59,18 @@ fun MainPage() {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        RoundIcon(R.drawable.notifications, "Notifications")
-                        RoundIcon(R.drawable.settings, "Settings")
+                        RoundIcon(
+                            R.drawable.notifications,
+                            "Notifications",
+                            BrandSecondary25,
+                            BrandSecondary700
+                        )
+                        RoundIcon(
+                            R.drawable.settings,
+                            "Settings",
+                            BrandSecondary25,
+                            BrandSecondary700
+                        )
                     }
 
                     Row(
