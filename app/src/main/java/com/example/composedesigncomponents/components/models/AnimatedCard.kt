@@ -8,5 +8,6 @@ data class AnimatedCard(
     val text: String,
     val backgroundColor: Color,
     val foregroundColor: Color,
-    val iconColor: Color
+    val iconColor: Color,
+    val route: String
 )

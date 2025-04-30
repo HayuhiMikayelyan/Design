@@ -54,6 +54,7 @@ val TextOnLight = Color(0xFF000000)
 
 val Secondary500 = Color(0xFF888CBF)
 val TextIncome = Color(0xFF0FA96C)
+val TextIncomeLight = Color(0xFF8AE5BB)
 val TextExpense = Color(0xFF9F3BF7)
 
 val ButtonPlain = Color(0xFFFFFFFF)

@@ -27,11 +27,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.composedesigncomponents.R
 import com.example.composedesigncomponents.components.edittexts.CommentEditText
 import com.example.composedesigncomponents.components.icons.RectangleIcon
 import com.example.composedesigncomponents.components.icons.RoundIcon
 import com.example.composedesigncomponents.components.models.ReportModel
+import com.example.composedesigncomponents.components.navigation.Screen
 import com.example.composedesigncomponents.components.spinners.CategoryPicker
 import com.example.composedesigncomponents.ui.theme.BackgroundContainer2
 import com.example.composedesigncomponents.ui.theme.ButtonPlain
@@ -46,6 +49,7 @@ import com.example.composedesigncomponents.ui.theme.TextSubtitle
 
 @Composable
 fun ReportsBasePage(
+    navController: NavController,
     reportModel: ReportModel
 ) {
     reportModel.apply {
@@ -79,7 +83,13 @@ fun ReportsBasePage(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        RoundIcon(R.drawable.back, "Back", IconRegular, ButtonPlain)
+                        RoundIcon(R.drawable.back, "Back", IconRegular, ButtonPlain,
+                            onClick = {
+                                navController.popBackStack(
+                                    route = Screen.Home.route,
+                                    inclusive = false
+                                )
+                            })
                         Text(
                             text = title,
                             fontSize = 18.sp,
@@ -241,8 +251,9 @@ fun ReportsBasePage(
 }
 
 @Composable
-fun IncomePage() {
+fun AddIncomePage(navController: NavController) {
     ReportsBasePage(
+        navController,
         ReportModel(
             background = R.drawable.income_background,
             image = R.drawable.income_icon,
@@ -257,8 +268,9 @@ fun IncomePage() {
 }
 
 @Composable
-fun ExpensePage() {
+fun AddExpensePage(navController: NavController) {
     ReportsBasePage(
+        navController,
         ReportModel(
             background = R.drawable.expense_background,
             image = R.drawable.expense_icon,
@@ -273,8 +285,9 @@ fun ExpensePage() {
 }
 
 @Composable
-fun DocumentPage() {
+fun AddDocumentPage(navController: NavController) {
     ReportsBasePage(
+        navController,
         ReportModel(
             background = R.drawable.document_background,
             image = R.drawable.document_icon,
@@ -291,5 +304,5 @@ fun DocumentPage() {
 @Preview
 @Composable
 private fun Preview() {
-    IncomePage()
+    AddIncomePage(navController = rememberNavController())
 }

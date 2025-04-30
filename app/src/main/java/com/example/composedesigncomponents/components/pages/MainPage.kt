@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.composedesigncomponents.R
 import com.example.composedesigncomponents.components.backgrounds.MainTopBackground
 import com.example.composedesigncomponents.components.cards.BottomCard
@@ -35,7 +37,7 @@ import com.example.composedesigncomponents.ui.theme.Neutral0
 import com.example.composedesigncomponents.ui.theme.Neutral800
 
 @Composable
-fun MainPage() {
+fun MainPage(navController: NavController) {
 
     Box(
         modifier = Modifier
@@ -139,7 +141,8 @@ fun MainPage() {
         BottomNavigationBar(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(start = 16.dp, end = 16.dp, bottom = 64.dp)
+                .padding(start = 16.dp, end = 16.dp, bottom = 64.dp),
+            navController = navController
         )
 
     }
@@ -148,5 +151,5 @@ fun MainPage() {
 @Preview
 @Composable
 private fun Preview() {
-    MainPage()
+    MainPage(navController = rememberNavController())
 }

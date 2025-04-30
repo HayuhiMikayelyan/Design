@@ -1,4 +1,4 @@
-package com.example.composedesigncomponents.components.animations_shapes
+package com.example.composedesigncomponents.components.shapes
 
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
@@ -40,7 +40,6 @@ class WaveCutOutRoundedShape(
             )
 
             lineTo(waveStartX, 0f)
-
             cubicTo(
                 waveStartX + (waveMidX - waveStartX) * 0.4f, 0f,
                 waveMidX - (waveMidX - waveStartX) * 0.5f, waveDepthPx,
