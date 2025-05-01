@@ -25,7 +25,7 @@ import com.example.composedesigncomponents.components.cards.InformationCard
 import com.example.composedesigncomponents.components.cards.MainActionsCard
 import com.example.composedesigncomponents.components.icons.MonthNavigationButton
 import com.example.composedesigncomponents.components.icons.RoundIcon
-import com.example.composedesigncomponents.components.navigation.BottomNavigationBar
+import com.example.composedesigncomponents.components.navigation.Screen
 import com.example.composedesigncomponents.ui.theme.BrandPrimary100
 import com.example.composedesigncomponents.ui.theme.BrandPrimary800
 import com.example.composedesigncomponents.ui.theme.BrandSecondary25
@@ -37,7 +37,7 @@ import com.example.composedesigncomponents.ui.theme.Neutral0
 import com.example.composedesigncomponents.ui.theme.Neutral800
 
 @Composable
-fun MainPage(navController: NavController) {
+fun HomePage(navController: NavController) {
 
     Box(
         modifier = Modifier
@@ -65,14 +65,25 @@ fun MainPage(navController: NavController) {
                             R.drawable.notifications,
                             "Notifications",
                             BrandSecondary25,
-                            BrandSecondary700
-                        )
+                            BrandSecondary700, onClick = {
+                                navController.navigate(Screen.Notifications.route) {
+                                    popUpTo(Screen.Home.route) { saveState = true }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                }
+                            })
+
                         RoundIcon(
                             R.drawable.settings,
                             "Settings",
                             BrandSecondary25,
-                            BrandSecondary700
-                        )
+                            BrandSecondary700, onClick = {
+                                navController.navigate(Screen.Settings.route) {
+                                    popUpTo(Screen.Home.route) { saveState = true }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                }
+                            })
                     }
 
                     Row(
@@ -137,19 +148,11 @@ fun MainPage(navController: NavController) {
                 BottomCard(title = "Last reporting", modifier = Modifier.padding(top = 16.dp))
             }
         }
-
-        BottomNavigationBar(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(start = 16.dp, end = 16.dp, bottom = 64.dp),
-            navController = navController
-        )
-
     }
 }
 
 @Preview
 @Composable
 private fun Preview() {
-    MainPage(navController = rememberNavController())
+    HomePage(navController = rememberNavController())
 }
